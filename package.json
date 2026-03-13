@@ -1,0 +1,100 @@
+{
+  "name": "vscode-maestro-mcp",
+  "displayName": "Maestro MCP",
+  "description": "The most comprehensive MCP server for VS Code — 96 tools across 24 categories, from file ops to LSP providers. Free core + premium features.",
+  "version": "0.2.0",
+  "publisher": "abyo-software",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youichi-uda/vscode-maestro-mcp.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "mcp",
+    "model context protocol",
+    "testing",
+    "language server",
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "code assistant",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Maestro MCP",
+      "properties": {
+        "maestroMcp.port": {
+          "type": "number",
+          "default": 3002,
+          "description": "Port for the MCP server"
+        },
+        "maestroMcp.host": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "Host for the MCP server"
+        },
+        "maestroMcp.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start the MCP server on activation"
+        },
+        "maestroMcp.licenseKey": {
+          "type": "string",
+          "default": "",
+          "description": "License key for premium features (LSP providers). Get one at https://abyo-software.gumroad.com/l/maestro-mcp",
+          "order": 100
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "maestroMcp.toggleServer",
+        "title": "Maestro MCP: Toggle Server"
+      },
+      {
+        "command": "maestroMcp.showInfo",
+        "title": "Maestro MCP: Show Server Info"
+      },
+      {
+        "command": "maestroMcp.enterLicense",
+        "title": "Maestro MCP: Enter License Key"
+      },
+      {
+        "command": "maestroMcp.licenseStatus",
+        "title": "Maestro MCP: License Status"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.mjs",
+    "package": "node esbuild.mjs --production",
+    "watch": "node esbuild.mjs --watch",
+    "lint": "eslint src --ext ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "express": "^4.21.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.27.3",
+    "typescript": "^5.3.0"
+  }
+}
