@@ -15,7 +15,7 @@ export function registerDocumentTools(server: McpServer): void {
       const doc = await ensureDocumentOpen(uri);
 
       const results = await vscode.commands.executeCommand<vscode.DocumentLink[]>(
-        'vscode.executeDocumentLinkProvider',
+        'vscode.executeLinkProvider',
         doc.uri,
       );
 
