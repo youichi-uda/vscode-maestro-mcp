@@ -1,4 +1,4 @@
-# Maestro MCP
+# VSCode Maestro MCP
 
 The most comprehensive MCP server for VS Code — 100+ tools across 25 categories, from file ops to LSP providers.
 
