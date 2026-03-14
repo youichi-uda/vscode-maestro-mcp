@@ -1,13 +1,14 @@
 {
   "name": "vscode-maestro-mcp",
   "displayName": "Maestro MCP",
-  "description": "The most comprehensive MCP server for VS Code — 96 tools across 24 categories, from file ops to LSP providers. Free core + premium features.",
+  "description": "The most comprehensive MCP server for VS Code — 100+ tools across 25 categories, from file ops to LSP providers. Free core + premium features.",
   "version": "0.2.0",
   "publisher": "abyo-software",
   "repository": {
     "type": "git",
     "url": "https://github.com/youichi-uda/vscode-maestro-mcp.git"
   },
+  "icon": "icon.png",
   "license": "SEE LICENSE IN LICENSE.md",
   "engines": {
     "vscode": "^1.85.0"
